@@ -4,12 +4,12 @@ from models.base_model import BaseModel
 
 
 class State(BaseModel):
-    """ 
+    """
     State Class
     Representation of state in the platform
     """
 
     name = ""
-    def __init__(self, *args **kwargs):
+    def __init__(self, *args, **kwargs):
         """Initializes State"""
-        super().__init__(self, *args **kwargs)
+        super().__init__(self, *args, **kwargs)
