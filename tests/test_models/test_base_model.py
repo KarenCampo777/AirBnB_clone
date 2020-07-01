@@ -9,7 +9,7 @@ import os
 import datetime
 
 
-class TestInitBaseModel(unittest.TestCase):
+class TestBaseModel(unittest.TestCase):
     """ Testing the initialization of a BaseModel instance """
 
     def setUp(self):
@@ -23,6 +23,8 @@ class TestInitBaseModel(unittest.TestCase):
         """
         Closing the test instance
         """
+        del self.my_base1
+        del self.my_base2
 
     def test_create(self):
         """
