@@ -83,7 +83,7 @@ class TestAmenity(unittest.TestCase):
 
     def test_docstring(self):
         """
-        Testing documentation on base_module
+        Testing documentation on amenity
         """
         self.assertIsNotNone(models.amenity.__doc__)
         self.assertIsNotNone(Amenity.__doc__)

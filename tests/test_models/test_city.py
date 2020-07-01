@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 
 """
-Test module for amenity module
+Test module for city module
 """
 
 from models.city import City
@@ -83,7 +83,7 @@ class TestCity(unittest.TestCase):
 
     def test_docstring(self):
         """
-        Testing documentation on base_module
+        Testing documentation on city
         """
-        self.assertIsNotNone(models.City.__doc__)
+        self.assertIsNotNone(models.city.__doc__)
         self.assertIsNotNone(City.__doc__)

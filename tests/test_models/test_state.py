@@ -83,7 +83,7 @@ class TestState(unittest.TestCase):
 
     def test_docstring(self):
         """
-        Testing documentation on base_module
+        Testing documentation on state
         """
         self.assertIsNotNone(models.state.__doc__)
-        self.assertIsNotNone(state.__doc__)
+        self.assertIsNotNone(State.__doc__)
