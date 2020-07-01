@@ -54,15 +54,31 @@ $
 
 ## Supported Commands Syntax
   
-* **create:** creates a new instance of the specified class, sacing it into the JSON file, it also prints the id. The *syntax* is: [class_name] or [class_name].create() 
-* **update** Updates the key value of an instance based on the class name and id by adding an update attribute. The *syntax* is: [class_name] [object_id] [update_key] [update_value] or [class].update([object_id] [update_key] [update_value]() 	
-* **show:** 	Prints all attributes or the string representation of an instance based on the id and class name. The *syntax* is:[class_name] [object_id] or [class_name].show([object_id])() 	Displays all attributes of class_name.object_id
-*	**all:**   Print the string representations of every instance based on the class name, if used with no option it prints every instance saved to the file. the *syntax* is: [class_name], [class_name].all() 	
-* **destroy:**	Deletes all attribues or an instance based on the id and class name. The *syntax* is [class_name] [object_id] or [class_name].destroy([object_id])() 	
-* **count:** 	Counts all the instances based on the id and class name. the *syntax* is: [class_name] or [class_name].count() 	
+* **create:** creates a new instance of the specified class, sacing it into the JSON file, it also prints the id. 
 
-* **help** 	Displays the use of all available commands. The *syntax* is: [help] [command] 	
+The *syntax* is: create <class name>
+* **update** Updates the key value of an instance based on the class name and id by adding an update attribute. 
+
+The *syntax* is: <class name> <id> <attribute name> "<attribute value>"
+
+* **show:** 	Prints all attributes or the string representation of an instance based on the id and class name. 
+
+The *syntax* is: <class name> <id>
+
+*	**all:**   Print the string representations of every instance based on the class name, if used with no option it prints every instance saved to the file. 
+
+The *syntax* is: all <class name> 
+
+* **destroy:**	Deletes all attribues or an instance based on the id and class name. 
+
+The *syntax* is: destroy <class name> <id>
+
+* **help** 	Displays the use of all available commands. 
+
+The *syntax* is: help <command>
+
 * **quit** 	Exit console
+
 * **EOF** 	Exit console
 
 ## Examples 
