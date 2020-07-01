@@ -55,6 +55,7 @@ class HBNBCommand(cmd.Cmd):
 
         Usage: create <class name>
 
+        Classes List: User, Stae, City, Amenity and Place
         """
         if not arg:
             print("** class name missing **")
@@ -72,6 +73,7 @@ class HBNBCommand(cmd.Cmd):
 
         Usage: show <class name> <id>
 
+        Classes List: User, Stae, City, Amenity and Place
         """
         if not arg:
             print("** class name missing **")
@@ -93,7 +95,7 @@ class HBNBCommand(cmd.Cmd):
         Destroy an instance based on the class name and id.
 
         Usage: destroy <class name> <id>
-
+        Classes List: User, Stae, City, Amenity and Place
         """
         if not arg:
             print("** class name missing **")
@@ -119,6 +121,7 @@ class HBNBCommand(cmd.Cmd):
         Usage: all                - prints all instances
                all <class name>   - prints all instances of a given class
 
+        Classes List: User, Stae, City, Amenity and Place
         """
         objs = storage.all()
 
@@ -141,6 +144,7 @@ class HBNBCommand(cmd.Cmd):
 
         Usage: update <class name> <id> <attribute name> "<attribute value>"
 
+        Classes List: User, Stae, City, Amenity and Place
         """
         if not arg:
             print("** class name missing **")
