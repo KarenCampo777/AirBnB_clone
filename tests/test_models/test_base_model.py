@@ -47,11 +47,11 @@ class TestInitBaseModel(unittest.TestCase):
         """
         Testing created_at and updated_at of instances
         """
-        self.assertIsInstance(self.my_base1.created_at, datetime)
-        self.assertIsInstance(self.my_base1.updated_at, datetime)
+        self.assertIsInstance(self.my_base1.created_at, datetime.datetime)
+        self.assertIsInstance(self.my_base1.updated_at, datetime.datetime)
         prev_date = self.my_base1.updated_at
         self.my_base1.save()
-        self.assertIsEqual(prev_date, self.my_base1.updated_at)
+        self.assertNotEqual(prev_date, self.my_base1.updated_at)
 
     def test_str_format(self):
         """
@@ -61,21 +61,21 @@ class TestInitBaseModel(unittest.TestCase):
         o = self.my_base1
         msg1 = o.__str__()
         msg2 = "[{}] ({}) {}".format(o.__class__.__name__, o.id, o.__dict__)
-        self.assertIsEqual(msg1, msg2)
+        self.assertEqual(msg1, msg2)
 
     def test_to_dict(self):
         """
         Testing to_dict function to return correct format
         """
         ins = self.my_base1
-        obj = ins.to_dict
+        obj = ins.to_dict()
         self.assertIsInstance(obj, dict)
         self.assertTrue('__class__' in obj)
-        self.assertIsEqual(obj['__class__'], 'BaseModel')
+        self.assertEqual(obj['__class__'], 'BaseModel')
         self.assertIsInstance(obj['created_at'], str)
         self.assertIsInstance(obj['updated_at'], str)
-        self.assertIsEqual(obj['created_at'], ins.created_at.isoformat())
-        self.assertIsEqual(obj['updated_at'], ins.updated_at.isoformat())
+        self.assertEqual(obj['created_at'], ins.created_at.isoformat())
+        self.assertEqual(obj['updated_at'], ins.updated_at.isoformat())
 
     def test_docstring(self):
         """
