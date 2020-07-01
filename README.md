@@ -2,6 +2,7 @@
 
 The Console is the first part of the AirBnB-Clone project.
 The first thing is to write a command interpreter for the objects of AirBnB clone.
+
 The command interpreter manages the Airbnb clone objects. The first part of building full Airbnb clone.
 
 ## Steps:
