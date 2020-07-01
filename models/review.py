@@ -4,7 +4,7 @@ from models.base_model import BaseModel
 
 
 class Review(BaseModel):
-    """ 
+    """
     Review Class
     Representation of Place in the platform
     """
@@ -12,6 +12,6 @@ class Review(BaseModel):
     place_id = ""
     user_id = ""
     text = ""
-    def __init__(self, *args **kwargs):
+    def __init__(self, *args, **kwargs):
         """Initializes Review"""
-        super().__init__(self, *args **kwargs)
+        super().__init__(self, *args, **kwargs)

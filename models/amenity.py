@@ -4,12 +4,12 @@ from models.base_model import BaseModel
 
 
 class Amenity(BaseModel):
-    """ 
+    """
     Amenit Class
     Representation of Amenity in the platform
     """
     name = ""
 
-    def __init__(self, *args **kwargs):
+    def __init__(self, *args, **kwargs):
         """Initializes Amenity"""
-        super().__init__(self, *args **kwargs)
+        super().__init__(self, *args, **kwargs)
