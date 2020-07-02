@@ -54,7 +54,6 @@ class HBNBCommand(cmd.Cmd):
         Prints the id of the new instance
 
         Usage: create <class name>
-
         """
         if not arg:
             print("** class name missing **")
@@ -172,6 +171,97 @@ class HBNBCommand(cmd.Cmd):
                             val = val[3].strip('"')
                             setattr(objs[msg], arg.split()[2], val)
                     objs[msg].save()
+
+
+    def default(self, arg):
+        """
+        Parse and interpretates a line if not found on regular commands
+        """
+        valid_fnc = {'all': self.new_all,  'count': self.count,
+                     'show': self.new_show, 'destroy': self.new_destroy,
+                     'update': self.new_update}
+
+        if '.' not in arg:
+            print("*** Unknown syntax: {}".format(arg))
+            return
+
+        val = arg.split('.')
+        cls_name = val[0]
+        val = val[1]
+        if '(' not in val:
+            print("*** Unknown syntax: {}".format(arg))
+            return
+
+        val = val.split('(')
+        fnc_name = val[0]
+        if fnc_name not in valid_fnc:
+            print("*** Unknown syntax: {}".format(arg))
+            return
+
+        val[0] = cls_name
+        valid_fnc[fnc_name](val)
+
+    def new_all(self, arg=[]):
+        """
+        Execute <class name>.all()
+        """
+        val = arg[1].split(')')
+        val = [w for w in val if w.strip()]
+        if len(val) > 0:
+            print("*** Unknown syntax: {}".format(val))
+            return
+        eval("self.do_all(\"{}\")".format(arg[0]))
+
+
+    def count(self, arg=[]):
+        """
+        Execute <class name>.count()
+        """
+        val = arg[1].split(')')
+        val = [w for w in val if w.strip()]
+        if len(val) > 0:
+            print("*** Unknown syntax: {}".format(val))
+            return
+
+        objs = storage.all()
+        if arg[0] not in classes.keys():
+            print("** class doesn't exist **")
+            return
+        else:
+            m = arg[0]
+            my_list = [str(objs[k]) for k in objs if k.split('.')[0] == m]
+        print(len(my_list))
+
+    def new_show(self, arg=[]):
+        """
+        Execute <class name>.show(<id>)
+        """
+        val = arg[1].split(')')
+        val = [w for w in val if w.strip()]
+        if len(val) != 1:
+            print("*** Unknown syntax: {}".format(val))
+            return
+        elif len(re.split(r'[,\s]\s*', val[0])) > 1:
+            print("*** Unknown syntax: {}".format(val))
+            return
+        eval("self.do_show(\"{} {}\")".format(arg[0], val[0]))
+
+    def new_destroy(self, arg=[]):
+        """
+        Execute <class name>.destroy(<id>)
+        """
+        val = arg[1].split(')')
+        val = [w for w in val if w.strip()]
+        if len(val) != 1:
+            print("*** Unknown syntax: {}".format(val))
+            return
+        elif len(re.split(r'[,\s]\s*', val[0])) > 1:
+            print("*** Unknown syntax: {}".format(val))
+            return
+        eval("self.do_destroy(\"{} {}\")".format(arg[0], val[0]))
+
+    def new_update(self, arg=[]):
+        pass
 
 
 if __name__ == "__main__":
