@@ -246,6 +246,7 @@ class HBNBCommand(cmd.Cmd):
         elif len(re.split(r'[,\s]\s*', val[0])) > 1:
             print("*** Unknown syntax: {}".format(val))
             return
+        val[0] = val[0].strip('"')
         eval("self.do_show(\"{} {}\")".format(arg[0], val[0]))
 
     def new_destroy(self, arg=[]):
@@ -260,6 +261,7 @@ class HBNBCommand(cmd.Cmd):
         elif len(re.split(r'[,\s]\s*', val[0])) > 1:
             print("*** Unknown syntax: {}".format(val))
             return
+        val[0] = val[0].strip('"')
         eval("self.do_destroy(\"{} {}\")".format(arg[0], val[0]))
 
     def new_update(self, arg=[]):
