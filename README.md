@@ -56,26 +56,26 @@ $
   
 * **create:** creates a new instance of the specified class, sacing it into the JSON file, it also prints the id. 
 
-The *syntax* is: create <class name>
+The *syntax* is: create \<class name\>
 * **update** Updates the key value of an instance based on the class name and id by adding an update attribute. 
 
-The *syntax* is: <class name> <id> <attribute name> "<attribute value>"
+The *syntax* is: \<class name\> \<id\> \<attribute name\> \<attribute value\>
 
 * **show:** 	Prints all attributes or the string representation of an instance based on the id and class name. 
 
-The *syntax* is: <class name> <id>
+The *syntax* is: \<class name\> \<id\>
 
 *	**all:**   Print the string representations of every instance based on the class name, if used with no option it prints every instance saved to the file. 
 
-The *syntax* is: all <class name> 
+The *syntax* is: all \<class name\> 
 
 * **destroy:**	Deletes all attribues or an instance based on the id and class name. 
 
-The *syntax* is: destroy <class name> <id>
+The *syntax* is: destroy \<class name\> \<id\>
 
 * **help** 	Displays the use of all available commands. 
 
-The *syntax* is: help <command>
+The *syntax* is: help \<command\>
 
 * **quit** 	Exit console
 
