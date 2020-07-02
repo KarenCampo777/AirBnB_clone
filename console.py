@@ -176,7 +176,6 @@ class HBNBCommand(cmd.Cmd):
                             setattr(objs[msg], arg.split()[2], val)
                     objs[msg].save()
 
-
     def default(self, arg):
         """
         Parse and interpretates a line if not found on regular commands
@@ -215,7 +214,6 @@ class HBNBCommand(cmd.Cmd):
             print("*** Unknown syntax: {}".format(val))
             return
         eval("self.do_all(\"{}\")".format(arg[0]))
-
 
     def count(self, arg=[]):
         """
